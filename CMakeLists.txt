@@ -17,9 +17,9 @@ add_custom_target(nvm_use
     COMMAND printenv | grep PATH
     COMMAND echo -n "before: "
     COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && nvm use 14
-    COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && echo -n "after: " && nvm --version
+    COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && echo -n "after: " && nvm version
     COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && nvm use 12
-    COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && echo -n "again: " && nvm --version
+    COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && echo -n "again: " && nvm version
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 add_custom_target(pyenv_check ALL DEPENDS pyenv_use
@@ -27,5 +27,5 @@ add_custom_target(pyenv_check ALL DEPENDS pyenv_use
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 add_custom_target(nvm_check ALL DEPENDS nvm_use
-    COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && echo -n "second nvm: " && nvm --version
+    COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && echo -n "second nvm: " && nvm version
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
