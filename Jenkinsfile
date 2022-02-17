@@ -4,7 +4,7 @@ pipeline {
         stage('test') {
             steps {
                 nvm('v14') {
-                    withEnv(["PATH=/var/lib/jenkins/.pyenv/shims:/var/lib/jenkins/.pyenv/bin:${env.PATH}"]) {
+                    withEnv(["PATH=~/.pyenv/shims:~/.pyenv/bin:${env.PATH}"]) {
                         cmakeBuild buildDir: 'build',
                             sourceDir: '.',
                             cleanBuild: true,
