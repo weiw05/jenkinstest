@@ -14,6 +14,7 @@ add_custom_target(pyenv_use
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 add_custom_target(nvm_use
+    COMMAND printenv
     COMMAND echo -n "before: " && nvm --version
     COMMAND nvm use v12
     COMMAND echo -n "after: " && nvm --version
