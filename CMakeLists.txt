@@ -5,6 +5,7 @@ set(PYTHON_VERSIONS 3.6.15 3.7.12 3.8.10 3.9.10)
 set(NODE_VERSIONS 12 14)
 
 add_custom_target(pyenv_use
+    COMMAND printenv
     COMMAND echo -n "before: " && python -V
     COMMAND pyenv local 3.6.15 && python -V
     COMMAND echo -n "after: " && python -V
