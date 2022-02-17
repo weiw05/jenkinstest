@@ -15,7 +15,7 @@ add_custom_target(pyenv_use
 
 add_custom_target(nvm_use
     COMMAND printenv | grep PATH
-    COMMAND echo -n "before: " && nvm --version
+    COMMAND echo -n "before: "
     COMMAND . /var/lib/jenkins/.nvm/nvm.sh && nvm use v12
     COMMAND echo -n "after: " && nvm --version
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
