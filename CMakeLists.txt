@@ -6,7 +6,7 @@ set(NODE_VERSIONS 12 14)
 
 add_custom_target(pyenv_use
     COMMAND echo -n "before: " && python -V
-    COMMAND sh ". pyenv.sh && pyenv local 3.6.15 && python -V"
+    COMMAND sh -c ". pyenv.sh && pyenv local 3.6.15 && python -V"
     COMMAND echo -n "after: " && python -V
     COMMAND . ./pyenv.sh && pyenv local 3.7.12 && python -V
     COMMAND echo -n "again: " && python -V
