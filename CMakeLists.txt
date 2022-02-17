@@ -6,8 +6,10 @@ set(NODE_VERSIONS 12 14)
 
 add_custom_target(pyenv_use
     COMMAND echo -n "before: " && python -V
-    COMMAND export PATH="~/.pyenv/bin:$PATH" && eval "$(pyenv init --path)" && pyenv use 3.6.15
+    COMMAND . pyenv.sh && pyenv use 3.6.15 && python -V
     COMMAND echo -n "after: " && python -V
+    COMMAND sh ". pyenv.sh && pyenv use 3.6.15 && python -V"
+    COMMAND echo -n "again: " && python -V
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 add_custom_target(nvm_use
