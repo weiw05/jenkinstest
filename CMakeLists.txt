@@ -22,6 +22,6 @@ add_custom_target(pyenv_check ALL DEPENDS pyenv_use
     COMMAND echo -n "second python: " && python -V
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 
-add_custom_target(nvm_check ALL DEPENDS nvm_use
+add_custom_target(nvm_check DEPENDS nvm_use
     COMMAND echo -n "second nvm: " && nvm --version
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
