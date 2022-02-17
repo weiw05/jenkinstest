@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PATH = "/var/lib/jenkins/.pyenv/shims:$ENV{PATH}"
+        PATH = "/var/lib/jenkins/.pyenv/shims:${env.PATH}"
     }
     stages {
         stage('test') {
