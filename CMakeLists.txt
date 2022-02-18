@@ -15,7 +15,7 @@ add_custom_target(pyenv_use
 
 add_custom_target(nvm_use
     COMMAND printenv | grep PATH
-    COMMAND echo -n "before: " && nvm list
+    COMMAND echo -n "before: "
     COMMAND export NVM_DIR=/usr/local/nvm && . $NVM_DIR/nvm.sh && nvm use 14
     COMMAND export NVM_DIR=/usr/local/nvm && . $NVM_DIR/nvm.sh && echo -n "after: " && nvm version
     COMMAND export NVM_DIR=/usr/local/nvm && . $NVM_DIR/nvm.sh && nvm use 12
