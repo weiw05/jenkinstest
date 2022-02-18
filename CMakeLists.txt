@@ -5,9 +5,9 @@ set(PYTHON_VERSIONS 3.6.15 3.7.12 3.8.10 3.9.10)
 set(NODE_VERSIONS 12 14)
 
 if(DEFINED ENV{JENKINS_HOME})
-    set(NVM_DIR /var/lib/jenkins)
+    set(NVM_DIR /var/lib/jenkins/.nvm)
 else()
-    set(NVM_DIR ~/)
+    set(NVM_DIR ~/.nvm)
 endif()
 
 add_custom_target(pyenv_use
