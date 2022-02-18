@@ -22,9 +22,9 @@ add_custom_target(pyenv_use
 add_custom_target(nvm_use
     COMMAND printenv | grep PATH
     COMMAND echo -n "before: "
-    COMMAND export NVM_DIR=${NVM_DIR} && . ${NVM_DIR}/nvm.sh && nvm use 14
+    COMMAND echo "14" > .nvmrc
     COMMAND export NVM_DIR=${NVM_DIR} && . ${NVM_DIR}/nvm.sh && echo -n "after: " && nvm version
-    COMMAND export NVM_DIR=${NVM_DIR} && . ${NVM_DIR}/nvm.sh && nvm use 12
+    COMMAND echo "12" > .nvmrc
     COMMAND export NVM_DIR=${NVM_DIR} && . ${NVM_DIR}/nvm.sh && echo -n "again: " && nvm version
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 
