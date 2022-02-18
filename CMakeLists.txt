@@ -15,7 +15,7 @@ add_custom_target(pyenv_use
 
 add_custom_target(nvm_use
     COMMAND printenv | grep PATH
-    COMMAND echo -n "before: "
+    COMMAND echo -n "before: " && nvm list
     COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && nvm use 14
     COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && echo -n "after: " && nvm version
     COMMAND export NVM_DIR=/var/lib/jenkins/.nvm && . /var/lib/jenkins/.nvm/nvm.sh && nvm use 12
