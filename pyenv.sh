@@ -6,5 +6,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 pyenv local 3.6.15
-echo -n "in script"
+echo -n "in the script"
 python -V
