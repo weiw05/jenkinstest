@@ -12,7 +12,7 @@ endif()
 
 add_custom_target(pyenv_use
     COMMAND printenv | sort
-    COMMAND echo -n "before: " && python -V
+    COMMAND echo -n "before:   " && python -V
     COMMAND pyenv local 3.6.15 && python -V
     COMMAND echo -n "after: " && python -V
     COMMAND pyenv local 3.9.10 && python -V
